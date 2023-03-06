@@ -1,0 +1,80 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: pig-register
+  name: pig-register 
+  namespace: pig-dev
+spec:
+  serviceName: pig-register
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pig-register
+  template:
+    metadata:
+      labels:
+        app: pig-register
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - nacos
+              topologyKey: "kubernetes.io/hostname"
+      containers:
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-register:$BUILD_NUMBER
+          imagePullPolicy: Always
+          name: pig-register
+          ports:
+            - containerPort: 8848
+              name: client-port
+            - containerPort: 9848
+              name: client-rpc
+            - containerPort: 9849
+              name: raft-rpc
+            - containerPort: 7848
+              name: old-raft-rpc
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pig-register
+  name: pig-register
+  namespace: pig-dev
+  annotations:
+    service.alpha.kubernetes.io/tolerate-unready-endpoints: "true"
+spec:
+  ports:
+    - port: 8848
+      protocol: TCP
+      name: server
+      targetPort: 8848
+      nodePort: 31203
+    - port: 9848
+      name: client-rpc
+      targetPort: 9848
+      nodePort: 31566
+    - port: 9849
+      name: raft-rpc
+      targetPort: 9849
+      nodePort: 31075
+    ## 兼容1.4.x版本的选举端口
+    - port: 7848
+      name: old-raft-rpc
+      targetPort: 7848
+      nodePort: 31740
+  selector:
+    app: pig-register
+  sessionAffinity: None
+  type: NodePort
