@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pig-gateway" />
+        <module name="pig-monitor" />
+        <module name="pig-common-job" />
+        <module name="pig-upms-biz" />
+        <module name="pig-common-security" />
+        <module name="pig-common-core" />
+        <module name="pig-upms-api" />
+        <module name="pig-codegen" />
+        <module name="pig-common-xss" />
+        <module name="pig-common-seata" />
+        <module name="pig-common-feign" />
+        <module name="pig-common-mybatis" />
+        <module name="pig-common-swagger" />
+        <module name="pig-sentinel-dashboard" />
+        <module name="pig-xxl-job-admin" />
+        <module name="pig-register" />
+        <module name="pig-auth" />
+        <module name="pig-common-log" />
+        <module name="pig-common-datasource" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

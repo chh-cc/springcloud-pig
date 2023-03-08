@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/pig-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-bom/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-bom/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-datasource/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-datasource/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-feign/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-feign/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-job/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-seata/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-seata/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-swagger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-swagger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-xss/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/pig-common-xss/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-register/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-register/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-upms/pig-upms-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-upms/pig-upms-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-upms/pig-upms-biz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-upms/pig-upms-biz/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-upms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-upms/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-codegen/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-codegen/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-monitor/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-monitor/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-sentinel-dashboard/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-sentinel-dashboard/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-sentinel-dashboard/src/main/webapp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-xxl-job-admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/pig-xxl-job-admin/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/pig-visual/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
