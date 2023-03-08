@@ -1,20 +1,18 @@
-## 整体架构
+## 1.整体架构
 
-<img src="assets/640.png" alt="图片" style="zoom:50%;" />
+![image-20230308170545572](assets/image-20230308170545572.png)
 
-## 部署环境
+## 2.部署环境
 
-K8S环境：
+K8S环境：自建K8S，1master+2node
 
 Mysql数据库：采用腾讯云的RDS
 
-Redis数据库：
-
 镜像仓库：采用阿里云的容器镜像服务
 
-## 部署流程
+## 3.部署流程
 
-### 导入数据库
+### 3.1导入数据库
 
 登录mysql，导入数据
 
@@ -29,7 +27,7 @@ mysql -h gz-cdb-xxxxxxxx.sql.tencentcdb.com -P 57091 -uroot -pxxxx < pig_job.sql
 
 <img src="assets/image-20230306161751905.png" alt="image-20230306161751905" style="zoom:50%;" />
 
-### 打包并制作镜像
+### 3.2打包并制作镜像
 
 #### 打包后端服务
 
@@ -73,7 +71,7 @@ cd docker/
 docker build -t registry.cn-shenzhen.aliyuncs.com/c-hh/pig-front:1.0.0 .
 ```
 
-### 部署服务
+### 3.3.部署服务
 
 先部署后端服务：
 
@@ -84,4 +82,8 @@ docker build -t registry.cn-shenzhen.aliyuncs.com/c-hh/pig-front:1.0.0 .
 ```shell
 kubectl apply -f pig-front.yaml
 ```
+
+访问 http://pig.com
+
+<img src="assets/image-20230308113858087.png" alt="image-20230308113858087" style="zoom:67%;" />
 

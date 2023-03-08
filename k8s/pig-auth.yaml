@@ -17,8 +17,10 @@ spec:
       labels:
         app: pig-auth
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-auth:$BUILD_NUMBER
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-auth:1.0.0
           imagePullPolicy: Always
           name: pig-auth
           ports:

@@ -17,8 +17,10 @@ spec:
       labels:
         app: pig-xxl-job-admin
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-xxl-job-admin:$BUILD_NUMBER
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-xxl-job-admin:1.0.0
           imagePullPolicy: Always
           name: pig-xxl-job-admin
           ports:

@@ -27,8 +27,10 @@ spec:
                     values:
                       - nacos
               topologyKey: "kubernetes.io/hostname"
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-register:$BUILD_NUMBER
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-register:1.0.0
           imagePullPolicy: Always
           name: pig-register
           ports:

@@ -17,8 +17,10 @@ spec:
       labels:
         app: pig-codegen
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-codegen:$BUILD_NUMBER
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-codegen:1.0.0
           imagePullPolicy: Always
           name: pig-codegen
           ports:

@@ -1,3 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pig-front
+  namespace: pig-dev
+spec:
+  rules:
+    - host: pig.com
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: pig-front
+              port:
+                number: 80
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -21,8 +39,10 @@ spec:
       labels:
         app: pig-front
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-front:$BUILD_NUMBER
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-front:1.0.0
           imagePullPolicy: Always
           name: pig-front
           ports:

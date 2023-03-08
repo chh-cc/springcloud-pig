@@ -1,10 +1,13 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
     app: pig-monitor
   name: pig-monitor
+  namespace: pig-dev
 spec:
+  progressDeadlineSeconds: 600
   replicas: 1
   selector:
     matchLabels:
@@ -14,10 +17,34 @@ spec:
       labels:
         app: pig-monitor
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-      - image: pig-monitor:1.0.0
-        name: pig-monitor
-        imagePullPolicy: IfNotPresent
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-monitor:1.0.0
+          imagePullPolicy: Always
+          name: pig-monitor
+          ports:
+            - containerPort: 5001
+              protocol: TCP
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          readinessProbe:
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+            tcpSocket:
+              port: 5001
+          livenessProbe:
+            initialDelaySeconds: 100
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+            tcpSocket:
+              port: 5001
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
 ---
 apiVersion: v1
 kind: Service
@@ -25,12 +52,15 @@ metadata:
   labels:
     app: pig-monitor
   name: pig-monitor
+  namespace: pig-dev
 spec:
   ports:
-  - port: 5001
-    protocol: TCP
-    targetPort: 5001
+    - name: http
+      port: 5001
+      protocol: TCP
+      targetPort: 5001
+      nodePort: 31206
   selector:
     app: pig-monitor
-  type: ClusterIP
-
+  sessionAffinity: None
+  type: NodePort

@@ -17,8 +17,10 @@ spec:
       labels:
         app: pig-upms-biz
     spec:
+      imagePullSecrets:
+        - name: registry-pull-secret
       containers:
-        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-upms-biz:$BUILD_NUMBER
+        - image: registry.cn-shenzhen.aliyuncs.com/c-hh/pig-upms-biz:1.0.0
           imagePullPolicy: Always
           name: pig-upms-biz
           ports:
